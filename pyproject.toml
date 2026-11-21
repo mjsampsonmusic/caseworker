@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "caseworker"
+version = "1.0.0"
+description = "A LangGraph agent that works consumer complaints end to end: triage, rule lookups, company history, a checked draft letter, human approval, and a ticket"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Mitchell Sampson" }]
+dependencies = [
+  "langgraph>=1.0",
+  "langchain-core>=1.0",
+  "langchain-ollama>=1.0",
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "httpx>=0.27",
+  "pydantic>=2.7",
+  "pandas>=2.2",
+  "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.36"]
+dev = ["pytest>=8", "respx>=0.21"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]

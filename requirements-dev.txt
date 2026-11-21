@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest==9.2.0
+respx==0.23.1
+case-router @ https://github.com/mjsampsonmusic/case-router/archive/refs/heads/main.zip

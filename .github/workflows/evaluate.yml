@@ -1,0 +1,154 @@
+name: Evaluate
+
+# Builds the whole system on one CPU runner (fineprint's rule index, firstlook's model, Case Router, Llama in
+# Ollama), works held-out complaints end to end, commits the results and publishes the results page.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "requirements*.txt"
+      - ".github/workflows/evaluate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: evaluate
+  cancel-in-progress: true
+
+jobs:
+  evaluate:
+    name: Run the evaluation
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: fineprint
+          POSTGRES_PASSWORD: fineprint
+          POSTGRES_DB: fineprint
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U fineprint"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      DATABASE_URL: postgresql://fineprint:fineprint@localhost:5432/fineprint
+      OLLAMA_URL: http://localhost:11434
+      LLM_MODEL: llama3.2:3b
+      FINEPRINT_URL: http://localhost:8001
+      FIRSTLOOK_URL: http://localhost:8002
+      CASE_ROUTER_URL: http://localhost:8003
+      HISTORY_DB: data/history.db
+      HF_HOME: ${{ github.workspace }}/.hf
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install caseworker and the services it uses
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements.txt
+          pip install "fineprint[ml] @ https://github.com/mjsampsonmusic/fineprint/archive/refs/heads/main.zip" \
+                      "firstlook @ https://github.com/mjsampsonmusic/firstlook/archive/refs/heads/main.zip" \
+                      "case-router @ https://github.com/mjsampsonmusic/case-router/archive/refs/heads/main.zip"
+          pip install --no-deps .
+
+      - name: Cache Hugging Face models
+        uses: actions/cache@v4
+        with:
+          path: .hf
+          key: hf-caseworker-v1
+
+      - name: Cache the complaint archive files
+        uses: actions/cache@v4
+        with:
+          path: fl-data/raw
+          key: cfpb-caseworker-v1
+
+      - name: Cache Ollama models
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-${{ env.LLM_MODEL }}-v1
+
+      - name: Start Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          sudo systemctl stop ollama || true
+          nohup ollama serve > ollama.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf "$OLLAMA_URL/api/version" && break; sleep 2; done
+          ollama pull "$LLM_MODEL"
+
+      - name: Build fineprint's rule index
+        run: python -m fineprint ingest --data fp-data
+
+      - name: Build firstlook's data and model
+        env:
+          MODEL_PATH: fl-models/baseline.joblib
+        run: |
+          python -m firstlook data --data fl-data
+          python -m firstlook train --data fl-data
+
+      - name: Start fineprint, firstlook and Case Router
+        run: |
+          nohup uvicorn fineprint.api:app --port 8001 > fineprint.log 2>&1 &
+          MODEL_PATH=fl-models/baseline.joblib LLM_MODEL= nohup uvicorn firstlook.api:app --port 8002 > firstlook.log 2>&1 &
+          CASE_ROUTER_DB=case_router.db HOST=127.0.0.1 PORT=8003 nohup python -m case_router > case_router.log 2>&1 &
+          for url in http://localhost:8001/health http://localhost:8002/health http://localhost:8003/healthz; do
+            for i in $(seq 1 90); do curl -sf "$url" > /dev/null && break; sleep 2; done
+            curl -sf "$url"
+          done
+
+      - name: Build the company history database
+        run: python -m caseworker history --archives fl-data/raw
+
+      - name: Evaluate
+        run: python -m caseworker evaluate --cases fl-data/splits/test.csv --per-product 3
+
+      - name: Build the results page and README table
+        run: python -m caseworker site
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/results.json results/summary.md README.md
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Update evaluation results"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evaluation
+          path: |
+            results/
+            *.log
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    name: Publish the results page
+    needs: evaluate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

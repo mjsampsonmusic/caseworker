@@ -1,0 +1,84 @@
+# The whole system: caseworker plus the services it works with.
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: fineprint
+      POSTGRES_PASSWORD: fineprint
+      POSTGRES_DB: fineprint
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fineprint"]
+      interval: 5s
+      retries: 20
+
+  ollama:
+    image: ollama/ollama
+    volumes:
+      - ollama:/root/.ollama
+
+  fineprint:
+    build: https://github.com/mjsampsonmusic/fineprint.git#main
+    environment:
+      DATABASE_URL: postgresql://fineprint:fineprint@db:5432/fineprint
+      OLLAMA_URL: http://ollama:11434
+    depends_on:
+      db:
+        condition: service_healthy
+
+  firstlook:
+    build: https://github.com/mjsampsonmusic/firstlook.git#main
+    environment:
+      LLM_MODEL: ""
+    volumes:
+      - firstlook-data:/app/data
+      - firstlook-models:/app/models
+
+  case-router:
+    image: python:3.13-slim
+    environment:
+      HOST: 0.0.0.0
+      PORT: "8003"
+      CASE_ROUTER_DB: /tmp/case_router.db
+    command: >-
+      sh -c "pip install --no-cache-dir https://github.com/mjsampsonmusic/case-router/archive/refs/heads/main.zip
+      && python -m case_router"
+
+  api:
+    build: .
+    environment:
+      FINEPRINT_URL: http://fineprint:8000
+      FIRSTLOOK_URL: http://firstlook:8000
+      CASE_ROUTER_URL: http://case-router:8003
+      OLLAMA_URL: http://ollama:11434
+      LLM_MODEL: llama3.2:3b
+      HISTORY_DB: /app/data/history.db
+    depends_on:
+      - fineprint
+      - firstlook
+      - case-router
+      - ollama
+    ports:
+      - "8000:8000"
+    volumes:
+      - firstlook-data:/firstlook-data:ro
+      - caseworker-data:/app/data
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    environment:
+      CASEWORKER_API: http://api:8000
+    depends_on:
+      - api
+    ports:
+      - "8503:8501"
+
+volumes:
+  pgdata: {}
+  ollama: {}
+  firstlook-data: {}
+  firstlook-models: {}
+  caseworker-data: {}
