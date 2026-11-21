@@ -1,0 +1,2677 @@
+{
+  "run": {
+    "finished": "2026-11-21 15:30 UTC",
+    "minutes": 132.5,
+    "machine": "Linux x86_64, 4 CPUs, no GPU",
+    "model": "llama3.2:3b",
+    "cases": 30
+  },
+  "summary": {
+    "cases": 30,
+    "completed": 30,
+    "triage_accuracy": 76.7,
+    "rule_family_match": 40.0,
+    "letters_passing_first_draft": 93.3,
+    "letters_passing_after_repair": 100.0,
+    "invented_citations_in_final_drafts": 0,
+    "model_searched_rules_itself": 100.0,
+    "fallback_searches": 0.0,
+    "avg_tool_calls": 2.9,
+    "repeated_tool_calls": 4,
+    "tickets_in_expected_queue": 100.0,
+    "cases_that_saw_earlier_notes": 5,
+    "avg_input_tokens": 5537.1,
+    "avg_output_tokens": 605.1,
+    "median_seconds": 265.4,
+    "p95_seconds": 347.7
+  },
+  "records": [
+    {
+      "id": "23844079",
+      "company": "EQUIFAX, INC.",
+      "issue": "Incorrect information on your report",
+      "truth": "credit_reporting",
+      "text": "I did not approve these inquiries on my behalf. Please review and correct them. Supporting documents are attached. These entries appeared on my report without my knowledge. Kindly investigate and resolve the matter. Documentation is included.",
+      "error": null,
+      "status": "filed",
+      "triage_product": "credit_reporting",
+      "triage_confidence": 0.9734,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.15",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Credit Reporting",
+      "expected_queue": "Credit Reporting",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-001\n\nWe acknowledge receipt of your complaint regarding unauthorized inquiries on your credit report. We are reviewing this matter in accordance with 12 CFR 1006.6(a) and will take necessary steps to correct the inquiries as required by 12 CFR 1006.6(e).\n\nPlease note that we will provisionally credit your account in the amount of the alleged error within 10 business days of receiving the error notice, as per 12 CFR 1005.11(a)(1).\n\nSincerely,\n[Your Name]\n[Your Title]\nEQUIFAX, INC.",
+      "summary": "The consumer claims that EQUIFAX, INC. added unauthorized inquiries to their credit report without their knowledge or consent. The consumer requests that EQUIFAX, INC. review and correct the inquiries.",
+      "priority": "MEDIUM",
+      "input_tokens": 4930,
+      "output_tokens": 516,
+      "seconds": 246.1,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 853.0,
+          "detail": "credit_reporting at 97%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 21577.5,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 87027.2,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 123859.1,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.2,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 9.6,
+          "detail": "ticket 1 in Credit Reporting"
+        }
+      ]
+    },
+    {
+      "id": "23583990",
+      "company": "Experian Information Solutions Inc.",
+      "issue": "Incorrect information on your report",
+      "truth": "credit_reporting",
+      "text": "I was part of a security breach and my information was compromised",
+      "error": null,
+      "status": "filed",
+      "triage_product": "debt_collection",
+      "triage_confidence": 0.2786,
+      "triage_route": "person",
+      "triage_correct": false,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 1,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Debt Collection",
+      "expected_queue": "Debt Collection",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-002\n\nWe acknowledge receipt of your complaint regarding Experian Information Solutions Inc.'s debt collection practices. We are reviewing your complaint in accordance with 12 CFR 1006.6(a), which requires us to communicate with consumers in a reasonable and convenient time and place.\n\nPlease note that you have the right to opt out of further electronic communications or attempts to communicate from Experian Information Solutions Inc. regarding debt collection. If you wish to opt out, you can do so by contacting us at [insert contact information].\n\nWe will review your complaint and respond accordingly. Please note that we are not required to provide any refund or compensation, but we will follow the procedures outlined in 12 CFR 1006.6(e) and 12 CFR 1006.6(d)(3)(i) and (d)(5)(i).\n\nSincerely,\n[Your Name]",
+      "summary": "The consumer claims to have been part of a security breach and their information was compromised, and they want to know if Experian Information Solutions Inc. will stop contacting them about debt collection.",
+      "priority": "MEDIUM",
+      "input_tokens": 4000,
+      "output_tokens": 578,
+      "seconds": 188.4,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 138.9,
+          "detail": "debt_collection at 28%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 7075.3,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 88923.9,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "4 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 88744.8,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.1,
+          "detail": "ticket 2 in Debt Collection"
+        }
+      ]
+    },
+    {
+      "id": "23433039",
+      "company": "Experian Information Solutions Inc.",
+      "issue": "Problem with a company's investigation into an existing problem",
+      "truth": "credit_reporting",
+      "text": "I am submitting this complaint to the Consumer Financial Protection Bureau regarding inaccurate, incomplete, and potentially unverifiable information currently being reported on my credit files maintained by Experian , Equifax, and TransUnion. After carefully reviewing my credit reports, I identified accounts being reported with late payment status that appear inconsistent, unverified, or inaccurate, which is negatively impacting my credit profile and financial standing. The accounts in question include [redacted] [redacted] ending in [redacted] [redacted] [redacted] [redacted] [redacted] with",
+      "error": null,
+      "status": "filed",
+      "triage_product": "credit_reporting",
+      "triage_confidence": 0.9812,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 1,
+      "ticket_queue": "Credit Reporting",
+      "expected_queue": "Credit Reporting",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-003\n\nWe acknowledge receipt of your complaint regarding Experian Information Solutions Inc. and the concerns you have raised about debt collection after a security breach. We are reviewing your complaint in accordance with the Fair Credit Reporting Act (FCRA) and the regulations governing debt collection.\n\nAs per 12 CFR 1006.6(d)(5)(i), we are required to stop contacting you about debt collection if you have not opted out of text message communications to your telephone number within the past 60 days. We will review your request and respond accordingly.\n\nPlease note that our usual response to such complaints is to close the account with an explanation, as per 12 CFR 1022.74(d)(1)(ii)(E). However, we will follow the applicable regulations and provide a response in accordance with the FCRA and the regulations governing debt collection.\n\nSincerely,\n[Your Name]\nConsumer Financial Protection Bureau\n\n",
+      "summary": "The consumer claims that their information was compromised in a security breach and they want to know if Experian Information Solutions Inc. will stop contacting them about debt collection. The consumer wants to know if Experian will stop contacting them about debt collection after the security breach.",
+      "priority": "MEDIUM",
+      "input_tokens": 6238,
+      "output_tokens": 635,
+      "seconds": 296.9,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.4,
+          "detail": "masked nothing; 1 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 122.8,
+          "detail": "credit_reporting at 98%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 23939.1,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 118866.7,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 150364.1,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.3,
+          "detail": "ticket 3 in Credit Reporting"
+        }
+      ]
+    },
+    {
+      "id": "23523822",
+      "company": "Aldous & Associates, PLLC",
+      "issue": "Took or threatened to take negative or legal action",
+      "truth": "debt_collection",
+      "text": "This issue is not resolved. I have not received any documentation from [redacted] or the furnisher. The furnisher ( Aldous & Associates/ the apartment complex ) has never validated this debt. [redacted] response was incomplete and inaccurate. They referenced [redacted] [redacted], which is not related to this account. This shows [redacted] did not conduct a proper reinvestigation and did not review my evidence, which violates FCRA [redacted] ( a ) ( [redacted] ). I am requesting that the CFPB reopen this complaint and require [redacted] to : Correctly identify the furnisher for the apartment c",
+      "error": null,
+      "status": "filed",
+      "triage_product": "debt_collection",
+      "triage_confidence": 0.799,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1006.34",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Debt Collection",
+      "expected_queue": "Debt Collection",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-004\n\nWe acknowledge receipt of your complaint against Aldous & Associates, PLLC regarding the debt collection process. Our review will be conducted in accordance with 12 CFR 1006.34(c), which requires a debt collector to provide validation information, including the debt collector's name, the mailing address at which the debt collector accepts disputes and requests for original-creditor information, the consumer's name and mailing address, and the account number associated with the debt.\n\nPlease note that the CFPB will not provide a refund or timeline for resolution. However, we will ensure that the company complies with the applicable rules, including FCRA 1006.34(a)(1), which requires a debt collector to provide validation information either by sending a validation notice in the manner required by 12 CFR 1006.42 or by providing the validation information orally in the initial communication.\n\nSincerely,\n[Your Name]\nCFPB Case Manager\n\n",
+      "summary": "The consumer claims that Aldous & Associates, PLLC failed to validate the debt and provided incomplete and inaccurate information. The consumer requests that the CFPB reopen the complaint and require the company to provide documentation verifying the debt, a clear reinvestigation result, and explain how they complied with FCRA 1006.34.",
+      "priority": "MEDIUM",
+      "input_tokens": 5447,
+      "output_tokens": 676,
+      "seconds": 270.5,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 138.4,
+          "detail": "debt_collection at 80%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 17790.1,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 109941.0,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 138814.5,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.4,
+          "detail": "ticket 4 in Debt Collection"
+        }
+      ]
+    },
+    {
+      "id": "22821468",
+      "company": "Waypoint Resource Group, LLC",
+      "issue": "Attempts to collect debt not owed",
+      "truth": "debt_collection",
+      "text": "Subject : Complaint Regarding Improper Collection Reporting by [redacted] [redacted] Waypoint Resource Group LLC Dear Consumer Financial Protection Bureau ( CFPB ), I am submitting this complaint regarding an [redacted] account that has been improperly placed in collections by Waypoint Resource Group LLC [redacted] California Department [redacted] [redacted] [redacted] [redacted] Innovation Debt Collector License No. [redacted] ) [redacted] repeatedly reported [redacted] the credit bureaus. I respectfully request that this collection account be permanently removed from all three major credit r",
+      "error": null,
+      "status": "filed",
+      "triage_product": "debt_collection",
+      "triage_confidence": 0.9589,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 1,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Debt Collection",
+      "expected_queue": "Debt Collection",
+      "letter": "Dear [Consumer's Name], Re: Case Number EV-005, Waypoint Resource Group, LLC, Dear Consumer, we acknowledge receipt of your complaint regarding improper collection reporting by Waypoint Resource Group, LLC. We are reviewing this matter in accordance with 12 CFR 1006.6(a), which requires us to communicate with consumers in a reasonable and convenient time and place. We will also consider your request to remove the collection account from all three major credit reporting agencies in accordance with 12 CFR 1006.6(e). Please note that we will not require any payment or information from you to process your request. We will provide an update on the status of your complaint once we have completed our review. Sincerely, [Your Name], Consumer Financial Protection Bureau.",
+      "summary": "The consumer is disputing an improper collection reporting by Waypoint Resource Group, LLC, which repeatedly reported the account to credit bureaus despite being removed previously. The consumer wants the collection account to be permanently removed from all three major credit reporting agencies.",
+      "priority": "MEDIUM",
+      "input_tokens": 5193,
+      "output_tokens": 502,
+      "seconds": 235.8,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.3,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 156.6,
+          "detail": "debt_collection at 96%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 21749.1,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 109798.3,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "4 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 100728.1,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.1,
+          "detail": "ticket 5 in Debt Collection"
+        }
+      ]
+    },
+    {
+      "id": "23945831",
+      "company": "Lewis, McDonnell & Associates",
+      "issue": "Took or threatened to take negative or legal action",
+      "truth": "debt_collection",
+      "text": "I am filing this complaint regarding collection activity by [redacted] and [redacted] [redacted], operating as McDonnell and Associates LLC, related to an alleged debt they claim is owed to World Finance. On [redacted]/year>, at approximately [redacted] a.m., I received a call from [redacted] and [redacted] [redacted], operating as McDonnell and Associates LLC, stating that I owed a debt to World Finance. During the call, I advised the representative that I disputed the alleged debt because I believed the account had already been paid and/or resolved. I requested proof and validation showing t",
+      "error": null,
+      "status": "filed",
+      "triage_product": "debt_collection",
+      "triage_confidence": 0.9979,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Debt Collection",
+      "expected_queue": "Debt Collection",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-006\n\nWe acknowledge receipt of your complaint regarding the collection activity by McDonnell and Associates LLC. We are reviewing your complaint and will follow the procedures outlined in 12 CFR 1006.6(a) and (b) for communications in connection with debt collection. Specifically, we will ensure that any further communication is made in a clear and conspicuous manner, and that you have the opportunity to opt out of further electronic communications or attempts to communicate.\n\nPlease note that we will not provide any further response or resolution without following the applicable rules and regulations.\n\nSincerely,\n[Your Name]",
+      "summary": "The consumer received a call from McDonnell and Associates LLC, claiming they owed a debt to World Finance. The consumer disputed the debt, requesting proof and validation, but the collectors continued to pressure for payment and threatened legal action. The consumer believes this conduct was improper and may be using unfair, deceptive, abusive, and/or threatening collection tactics in violation of the Fair Debt Collection Practices Act and applicable consumer protection laws.",
+      "priority": "MEDIUM",
+      "input_tokens": 5895,
+      "output_tokens": 574,
+      "seconds": 278.2,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.3,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 120.3,
+          "detail": "debt_collection at 100%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 22861.3,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 106917.4,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 144964.1,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.8,
+          "detail": "ticket 6 in Debt Collection"
+        }
+      ]
+    },
+    {
+      "id": "23708484",
+      "company": "CAPITAL ONE FINANCIAL CORPORATION",
+      "issue": "Closing an account",
+      "truth": "bank_account",
+      "text": "I closed my checking in high-yield savings account with capital one 360 on [redacted]. It shows in my accounts that those were closed out and that money was transferred to my [redacted] [redacted] account. An account I have been transferring to and from those accounts with for over 12 years. The money was supposed to hit my account at [redacted] [redacted] within three business days. The savings close-out dollar amount was {$2100.00}. The check-in closeout was {$890.00}. I have called Capital One five times. As of [redacted] I have not received any of my money or been given any information as ",
+      "error": null,
+      "status": "filed",
+      "triage_product": "bank_account",
+      "triage_confidence": 0.7594,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Deposit Accounts",
+      "expected_queue": "Deposit Accounts",
+      "letter": "Dear [Consumer], Re: EV-007\n\nWe acknowledge receipt of your complaint and are reviewing it. Please note that, as per 12 CFR 1006.6(a), we are prohibited from communicating with you at unusual or inconvenient times. We will provide you with an update on the status of your complaint as soon as possible.\nSincerely,\n[Your Name]",
+      "summary": "The consumer claims that Capital One failed to transfer $2100.00 from a closed savings account to their primary account, despite confirming a form submission. The consumer has called Capital One five times and has not received their money or any explanation for the delay. The consumer wants their money transferred to their primary account as soon as possible.",
+      "priority": "MEDIUM",
+      "input_tokens": 5705,
+      "output_tokens": 411,
+      "seconds": 245.6,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 159.7,
+          "detail": "bank_account at 76%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 17510.9,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 105380.0,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 118932.9,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 5.9,
+          "detail": "ticket 7 in Deposit Accounts"
+        }
+      ]
+    },
+    {
+      "id": "23464483",
+      "company": "TRUIST FINANCIAL CORPORATION",
+      "issue": "Managing an account",
+      "truth": "bank_account",
+      "text": "{$440.00} was taking out of my checking account Via a purchase that was not supposed to be there. I disputed on [redacted]/2026 at [redacted] [redacted]! I disputed the next day [redacted]/2026 and they denied my claim after 3 days with no investigation!",
+      "error": null,
+      "status": "filed",
+      "triage_product": "bank_account",
+      "triage_confidence": 0.8173,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Deposit Accounts",
+      "expected_queue": "Deposit Accounts",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-008\n\nThank you for bringing this matter to our attention. We have received your complaint and are reviewing it in accordance with 12 CFR 1006.6(a), which requires us to communicate with you in a reasonable and convenient time and place. We will also consider the provisions of 12 CFR 1005.11(a)(1) and 12 CFR 1005.11(c)(2)(i) in resolving this issue.\n\nPlease note that we will provisionally credit your account in the amount of the alleged error, including interest where applicable, within 10 business days of receiving your error notice. We will also inform you of the steps we will take to resolve this issue.\n\nSincerely,\n[Your Name]\nTRUIST FINANCIAL CORPORATION\n",
+      "summary": "The consumer claims that $440.00 was taken out of their checking account without their consent via a purchase that was not supposed to be there. The consumer disputes the charge and requests resolution.",
+      "priority": "MEDIUM",
+      "input_tokens": 4983,
+      "output_tokens": 493,
+      "seconds": 224.5,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 144.5,
+          "detail": "bank_account at 82%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 8439.8,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 93186.8,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 119366.0,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 7.5,
+          "detail": "ticket 8 in Deposit Accounts"
+        }
+      ]
+    },
+    {
+      "id": "24224315",
+      "company": "Experian Information Solutions Inc.",
+      "issue": "Problem with a lender or other company charging your account",
+      "truth": "bank_account",
+      "text": "On [redacted]/2026, I received an email from [redacted] stating that I had made a purchase at [redacted]. As i was in bed at the time, I went thru all my accounts and discovered that not only had my [redacted] account been wiped out, but also my Experian [redacted] [redacted] account in the amount of $ [redacted] the exact amount i had left in the account. I called Experian and was told that I had to wait until the transaction settled before I could file my dispute. On [redacted]/2026, I filed a dispute with Experian , explaining to them that I was a victim of fraud and that my card [redacted]",
+      "error": null,
+      "status": "filed",
+      "triage_product": "credit_card",
+      "triage_confidence": 0.3031,
+      "triage_route": "person",
+      "triage_correct": false,
+      "cited": [
+        "1005.11",
+        "1005.15",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 2,
+      "ticket_queue": "Credit Cards",
+      "expected_queue": "Credit Cards",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-009\n\nWe acknowledge receipt of your complaint regarding Experian Information Solutions Inc. and your concerns about debt collection after a security breach. We are reviewing your complaint in accordance with 12 CFR 1006.6(a) and will provide a response in accordance with 12 CFR 1006.6(e).\n\nPlease note that as a debt collector, Experian Information Solutions Inc. is required to follow the procedures outlined in 12 CFR 1006.6(d)(3)(i) and 12 CFR 1006.6(d)(5)(i), which include providing opt-out notices for electronic communications or attempts to communicate.\n\nWe will provide a response to your complaint within the timeframe required by law. Please allow us to review your complaint and provide a response in accordance with the applicable regulations.\n\nSincerely,\n[Your Name] Experian Information Solutions Inc.",
+      "summary": "The consumer claims to have been part of a security breach and their information was compromised, and they want to know if Experian Information Solutions Inc. will stop contacting them about debt collection. The consumer wants to know if Experian will stop contacting them about debt collection after the security breach.",
+      "priority": "MEDIUM",
+      "input_tokens": 5859,
+      "output_tokens": 708,
+      "seconds": 288.0,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 2 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 129.8,
+          "detail": "credit_card at 30%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 18347.7,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 112077.4,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 153680.0,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.1,
+          "detail": "ticket 9 in Credit Cards"
+        }
+      ]
+    },
+    {
+      "id": "23497019",
+      "company": "Paypal Holdings, Inc",
+      "issue": "Unauthorized transactions or other transaction problem",
+      "truth": "money_transfer",
+      "text": "I am filing this complaint regarding PayPals handling of my Item Not Received dispute for [redacted] [redacted] [redacted] [redacted], paid through PayPal/Pay in [redacted] for {$770.00}. [redacted] tracking shows the package as delivered, but the [redacted] [redacted] delivery map provided by the seller shows the package was delivered to the wrong house number : [redacted] [redacted] [redacted] instead of my PayPal shipping address at [redacted] [redacted] [redacted]. This was not a theft-after-delivery situation. The evidence shows a [redacted] misdelivery to the wrong address. I provided Pa",
+      "error": null,
+      "status": "filed",
+      "triage_product": "money_transfer",
+      "triage_confidence": 0.8062,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Payments and Transfers",
+      "expected_queue": "Payments and Transfers",
+      "letter": "Dear [Consumer],\n\nCase Number: EV-010\n\nThank you for submitting your complaint to us. We acknowledge receipt of your complaint and are reviewing it in accordance with our rules. Specifically, we will be following the procedures outlined in 12 CFR 1006.6(a) and 1005.11(a)(1), which require us to investigate and resolve errors in electronic fund transfers. We will provide a response to you within a reasonable timeframe.\n\nSincerely,\n[Your Name]",
+      "summary": "The consumer is disputing a delivery issue with a PayPal money transfer, claiming the package was delivered to the wrong address. The consumer wants PayPal to investigate and resolve the issue.",
+      "priority": "MEDIUM",
+      "input_tokens": 5790,
+      "output_tokens": 457,
+      "seconds": 254.9,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 125.6,
+          "detail": "money_transfer at 81%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 17525.9,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 111393.7,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 122401.2,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.6,
+          "detail": "ticket 10 in Payments and Transfers"
+        }
+      ]
+    },
+    {
+      "id": "23590994",
+      "company": "Block, Inc.",
+      "issue": "Other transaction problem",
+      "truth": "money_transfer",
+      "text": "I am filing a complaint against Cash App ( Block , Inc. ) due to inadequate customer service and unfair practices, which violate the Consumer Financial Protection Act ( CFPA ). Specifically, Cash App failed to take timely and effective measures to prevent and address fraud on their platform, leaving my account vulnerable and unprotected. Furthermore, their dispute resolution proced was unfair and deceptive, as they did not comply with error resolution requirements under the Electronic Fund Transfer Act ( EFTA ) and Regulation E. These actions have caused significant inconvenience [redacted] fi",
+      "error": null,
+      "status": "filed",
+      "triage_product": "money_transfer",
+      "triage_confidence": 0.986,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.15",
+        "1005.33",
+        "1006.22",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Payments and Transfers",
+      "expected_queue": "Payments and Transfers",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-011\n\nWe acknowledge receipt of your complaint against Block, Inc. (Cash App) and are reviewing the matter in accordance with the Consumer Financial Protection Act (CFPA) and other relevant regulations. Specifically, we will be examining the company's compliance with 12 CFR 1006.22(a), which prohibits unfair or unconscionable means, as well as 12 CFR 1006.6(a), which requires communication with consumers in a reasonable and convenient time and place.\n\nWe will also be reviewing the company's procedures for resolving errors, as outlined in 12 CFR 1005.11(a)(1) and 12 CFR 1005.11(c)(2)(i), to determine if any errors or unauthorized transactions occurred.\n\nPlease note that we will not provide any further information or updates on this case without your written consent.\n\nSincerely,\n[Your Name]\nConsumer Complaint Reviewer\nBlock, Inc.",
+      "summary": "The consumer is filing a complaint against Block, Inc. (Cash App) due to inadequate customer service and unfair practices, specifically failing to prevent and address fraud on their platform, and unfair dispute resolution procedures. The consumer seeks redress for significant financial loss and inconvenience.",
+      "priority": "MEDIUM",
+      "input_tokens": 5234,
+      "output_tokens": 665,
+      "seconds": 278.6,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 177.5,
+          "detail": "money_transfer at 99%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 12235.8,
+          "detail": "find_rules, company_history, find_rules"
+        },
+        {
+          "step": "research",
+          "ms": 107646.1,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 155156.2,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 7.9,
+          "detail": "ticket 11 in Payments and Transfers"
+        }
+      ]
+    },
+    {
+      "id": "23082408",
+      "company": "Comerica",
+      "issue": "Unauthorized transactions or other transaction problem",
+      "truth": "money_transfer",
+      "text": "I am filing a complaint regarding [redacted] [redacted] handling of my dispute attempts. I have mailed a letter disputing [redacted] fraudulent [redacted] transactions. The transactions [redacted] [redacted] [redacted]/year> in the amount {$530.00} [redacted] [redacted]/year> in the amount {$370.00} The transaction were made in [redacted] [redacted], CT. When I was physically in [redacted], NY. The charges were not mine nor were they authorized by me. [redacted] [redacted] has engaged in grossly negligent practices by creating roadblocks that prevent me from disputing these charges. They keep ",
+      "error": null,
+      "status": "filed",
+      "triage_product": "bank_account",
+      "triage_confidence": 0.3428,
+      "triage_route": "person",
+      "triage_correct": false,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Deposit Accounts",
+      "expected_queue": "Deposit Accounts",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-012\n\nWe acknowledge receipt of your complaint regarding the handling of your dispute attempts with Comerica. We are reviewing your case in accordance with 12 CFR 1006.6(a), which requires us to communicate with you in a timely and respectful manner.\n\nPlease be advised that we will not communicate with you at your place of employment, as this may be inconvenient to you. We will also not communicate with you at unusual times, unless you have given us prior consent to do so.\n\nWe will provide you with a satisfactory response to your complaint in accordance with 12 CFR 1006.6(c)(2)(ii), which requires us to inform you of the steps we will take to resolve the issue.\n\nSincerely,\n[Your Name]\nComerica Consumer Affairs\n",
+      "summary": "The consumer is disputing fraudulent transactions on their bank account and claims that Comerica has engaged in grossly negligent practices by creating roadblocks that prevent them from disputing the charges. The consumer wants Comerica to resolve the issue and provide a satisfactory response.",
+      "priority": "MEDIUM",
+      "input_tokens": 5621,
+      "output_tokens": 505,
+      "seconds": 271.1,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.3,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 255.4,
+          "detail": "bank_account at 34%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 17179.3,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 111422.4,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 138274.9,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.4,
+          "detail": "ticket 12 in Deposit Accounts"
+        }
+      ]
+    },
+    {
+      "id": "24389174",
+      "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+      "issue": "Unexpected or other fees",
+      "truth": "prepaid_card",
+      "text": "Subject : Formal Dispute and Complaint Regarding EDD Debit Card Fraud and Unresolved Reimbursement To Whom It May Concern, I am submitting this formal complaint regarding the fraudulent transactions on my Bank of America Prepaid EDD Debit Card account that have remained unresolved for approximately six years. Beginning in [redacted], I reported unauthorized transactions totaling approximately {$21000.00} that were made from my EDD debit card account. Since then, I have fully cooperated with every request made by Bank of America Prepaid Services. I have verified my identity on four separate occ",
+      "error": null,
+      "status": "filed",
+      "triage_product": "bank_account",
+      "triage_confidence": 0.8247,
+      "triage_route": "person",
+      "triage_correct": false,
+      "cited": [
+        "1005.11",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Deposit Accounts",
+      "expected_queue": "Deposit Accounts",
+      "letter": "Dear [Consumer's Name], Re: EV-013, Bank of America Prepaid EDD Debit Card Account Dispute. We acknowledge receipt of your formal complaint regarding the unauthorized transactions on your Bank of America Prepaid EDD Debit Card account. We are reviewing your case in accordance with 12 CFR 1006.6(a), which requires us to communicate with you in a reasonable and convenient time and place. Please note that you have the right to opt-out of further electronic communications or attempts to communicate by email or text message. We will provide you with a clear and conspicuous statement describing a reasonable and simple method by which you can opt-out. We will also provisionally credit your account in the amount of the alleged error, if applicable, within 10 business days of receiving your error notice. We will inform you of the outcome of our investigation and any subsequent actions taken in accordance with 12 CFR 1005.11(a)(1). Sincerely, [Your Name] Bank of America, National Association",
+      "summary": "The consumer is disputing the unauthorized transactions on their Bank of America Prepaid EDD Debit Card account that have remained unresolved for six years. The consumer wants reimbursement for the remaining fraudulent transactions. The consumer believes that the bank's handling of the case is unfair and that they have been denied reimbursement for the same portion of the fraud that was recognized as legitimate.",
+      "priority": "MEDIUM",
+      "input_tokens": 5887,
+      "output_tokens": 564,
+      "seconds": 280.8,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.5,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 144.7,
+          "detail": "bank_account at 82%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 19631.3,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 111858.2,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 145726.6,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.2,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.1,
+          "detail": "ticket 13 in Deposit Accounts"
+        }
+      ]
+    },
+    {
+      "id": "23189413",
+      "company": "Chime Financial Inc",
+      "issue": "Problem getting a card or closing an account",
+      "truth": "prepaid_card",
+      "text": "On [redacted] I received a notice that my account will be closed on the [redacted] of [redacted]. I mean, [redacted] attempts to call to find out what criteria justifies this closing of my account. Which day transfer me to a different apartment and they go pull up my account, they sit there and read it gon na hum. Oh, and then they just tell me we can't give you no information. This has become very inconvenient, frustrating being punished and not even know what for. I reviewed my transactions and found nothing even close to abnormal. Today [redacted]/year> approximately at [redacted] I even as",
+      "error": null,
+      "status": "filed",
+      "triage_product": "bank_account",
+      "triage_confidence": 0.3993,
+      "triage_route": "person",
+      "triage_correct": false,
+      "cited": [
+        "1006.14",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 2,
+        "find_rules_calls": 1,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Deposit Accounts",
+      "expected_queue": "Deposit Accounts",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-014\n\nWe acknowledge receipt of your complaint regarding your account with Chime Financial Inc. Our review of the relevant rules indicates that the company's actions may have violated 12 CFR 1006.14(e), which prohibits harassing, oppressive, or abusive conduct. Additionally, the company's failure to meaningfully disclose the caller's identity and refusal to provide identification may have also violated 12 CFR 1006.6(a) and 12 CFR 1006.6(b).\n\nWe will review this matter further and take necessary actions in accordance with the applicable rules. Please note that we cannot promise a specific outcome or timeline for this matter.\n\nSincerely,\n[Your Name] Chime Financial Inc.\n\n",
+      "summary": "The consumer claims that Chime Financial Inc closed their account without explanation, and when they attempted to contact the company, they were met with harassment and refusal to provide identification. The consumer wants their account to be reopened with restrictions.",
+      "priority": "MEDIUM",
+      "input_tokens": 3785,
+      "output_tokens": 573,
+      "seconds": 193.4,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 165.2,
+          "detail": "bank_account at 40%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 13565.6,
+          "detail": "find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 71493.9,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "4 passages, 2 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 106303.6,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.2,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.5,
+          "detail": "ticket 14 in Deposit Accounts"
+        }
+      ]
+    },
+    {
+      "id": "23331983",
+      "company": "Incomm Holdings Inc.",
+      "issue": "Trouble using the card",
+      "truth": "prepaid_card",
+      "text": "When attempting to use the card, the transactions are repeatedly declined, making the funds completely inaccessible. To resolve this, I have attempted to contact customer service multiple times a day ( approximately [redacted] times daily ) ever since receiving the card. Every attempt to reach them connects me to an automated robotic phone system. The system does not provide any option to speak with a live customer service representative, effectively blocking me from getting support or disputing the issue.",
+      "error": null,
+      "status": "filed",
+      "triage_product": "prepaid_card",
+      "triage_confidence": 0.556,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.15",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Payments and Transfers",
+      "expected_queue": "Payments and Transfers",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-015\n\nWe acknowledge receipt of your complaint regarding the issues with your prepaid card transactions. Our review will be conducted in accordance with 12 CFR 1006.6(a), which requires us to communicate with you in a reasonable and convenient manner. We will also consider the opt-out notice requirements outlined in 12 CFR 1006.6(e) and the procedures for resolving errors as outlined in 12 CFR 1005.11(a)(1) and 12 CFR 1005.11(c)(2)(i).\n\nPlease note that we will provisionally credit your account in the amount of the alleged error within 10 business days of receiving your complaint, as required by 12 CFR 1005.11(c)(2)(i).\n\nSincerely,\n[Your Name] Incomm Holdings Inc.",
+      "summary": "The consumer's prepaid card transactions are repeatedly declined, making the funds inaccessible. The consumer has attempted to contact customer service multiple times daily, but the automated robotic phone system does not provide an option to speak with a live customer service representative.",
+      "priority": "MEDIUM",
+      "input_tokens": 4941,
+      "output_tokens": 592,
+      "seconds": 253.6,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 185.7,
+          "detail": "prepaid_card at 56%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 9632.4,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 91470.3,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 148896.3,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.2,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 8.3,
+          "detail": "ticket 15 in Payments and Transfers"
+        }
+      ]
+    },
+    {
+      "id": "23793921",
+      "company": "AMERICAN EXPRESS COMPANY",
+      "issue": "Advertising and marketing, including promotional offers",
+      "truth": "credit_card",
+      "text": "Dear American Express / CFPB Representative, I am writing to dispute American Express response regarding my eligibility for the [redacted] Membership Rewards welcome bonus. American Express states that I did not meet the {$20000.00} spending threshold by [redacted]/year>. However, this does not fully account for the fact that American Express placed my account under financial review from approximately [redacted]/year> through [redacted]/year>, which directly interfered with my ability to continue spending on the card during the final portion of the promotional period. This financial review cau",
+      "error": null,
+      "status": "filed",
+      "triage_product": "credit_card",
+      "triage_confidence": 0.9498,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Credit Cards",
+      "expected_queue": "Credit Cards",
+      "letter": "Dear [Consumer], Re: Case Number EV-016\n\nWe acknowledge receipt of your complaint regarding your eligibility for the Membership Rewards welcome bonus. We are reviewing your case in accordance with 12 CFR 1006.6(a), which requires us to communicate with you in a reasonable and convenient time and place. We will provide a written explanation of our decision within 5 business days.\n\nSincerely,\n[Your Name]",
+      "summary": "The consumer is disputing American Express's response regarding their eligibility for the Membership Rewards welcome bonus, claiming that the company's financial review of their account interfered with their ability to meet the spending threshold.",
+      "priority": "MEDIUM",
+      "input_tokens": 5728,
+      "output_tokens": 588,
+      "seconds": 291.5,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.4,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 233.0,
+          "detail": "credit_card at 95%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 18635.6,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 125387.0,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 143660.2,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.5,
+          "detail": "ticket 16 in Credit Cards"
+        }
+      ]
+    },
+    {
+      "id": "22977122",
+      "company": "Bread Financial Holdings, Inc.",
+      "issue": "Fees or interest",
+      "truth": "credit_card",
+      "text": "in [redacted]/year> I purchased some some products in an [redacted] [redacted] [redacted]. After a week I payed of the full amount. In [redacted] I received an email with a late fee notification... I went online and I sow two months of late fee and a 2 months of fee charges. I called them knowing [redacted] be a mistake and why late fees when the account was payed in full, and why added fee charges? They told me I didn't payed in time and those are the charges added to an unpaid account late fee and an account fee. I told them when I went online to checked how much I have to pay, there was no ",
+      "error": null,
+      "status": "filed",
+      "triage_product": "credit_card",
+      "triage_confidence": 0.6167,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Credit Cards",
+      "expected_queue": "Credit Cards",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-017\n\nWe acknowledge receipt of your complaint regarding the charges on your credit card account with Bread Financial Holdings, Inc. We are reviewing your case in accordance with 12 CFR 1006.6(a), which requires us to communicate with consumers in a reasonable and convenient time.\n\nPlease note that you have the right to opt-out of further electronic communications or attempts to communicate from Bread Financial Holdings, Inc. as described in 12 CFR 1006.6(e).\n\nWe will investigate your complaint and provide a response in accordance with 12 CFR 1005.11(a)(1), which requires us to provisionally credit your account in the amount of the alleged error.\n\nSincerely,\n[Your Name]\n[Your Title]",
+      "summary": "The consumer claims that Bread Financial Holdings, Inc. incorrectly charged them with late fees and additional fees for a credit card account that was paid in full. The consumer wants the charges to be removed and their account to be closed.",
+      "priority": "MEDIUM",
+      "input_tokens": 6015,
+      "output_tokens": 613,
+      "seconds": 296.4,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.3,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 171.7,
+          "detail": "credit_card at 62%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 21584.3,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 121856.8,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 149472.0,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 7.0,
+          "detail": "ticket 17 in Credit Cards"
+        }
+      ]
+    },
+    {
+      "id": "23878441",
+      "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+      "issue": "Problem with a purchase shown on your statement",
+      "truth": "credit_card",
+      "text": "Complaint Regarding Disputed Charge [redacted] / [redacted] [redacted] [redacted] [redacted] {$560.00} I am submitting this complaint regarding a disputed charge of {$560.00} related to a booking with Fliggy ( operated by [redacted] [redacted] [redacted] [redacted] ), paid using my Bank of America Alaska [redacted] [redacted] credit card. Bank of America denied my dispute of this charge, and I believe the denial did not adequately address the actual basis of my dispute, which is [redacted] 's misleading order status communication not the airline ticket 's refund policy. Background On [redacted",
+      "error": null,
+      "status": "filed",
+      "triage_product": "credit_card",
+      "triage_confidence": 0.8383,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.18",
+        "1026.12",
+        "1026.52",
+        "1026.58"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 2,
+        "find_rules_calls": 1,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 1,
+      "ticket_queue": "Credit Cards",
+      "expected_queue": "Credit Cards",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-018\n\nWe acknowledge receipt of your complaint regarding the disputed charge on your Bank of America Prepaid EDD Debit Card account. We are reviewing this matter in accordance with our rules and regulations, specifically 12 CFR 1026.12(a) regarding special credit card provisions, 12 CFR 1005.18(e)(1)(i)(B) regarding requirements for financial institutions offering prepaid accounts, 12 CFR 1026.52(b)(2)(i)(B) regarding limitations on fees, and 12 CFR 1026.58(b)(6) regarding open accounts.\n\nPlease note that our response will be based on the information provided and the applicable rules. We will not provide any monetary relief or timeline for resolution beyond what is required by law.\n\nSincerely,\n[Your Name]\n[Your Title] Bank of America National Association\n\n",
+      "summary": "The consumer is disputing unauthorized transactions on their Bank of America Prepaid EDD Debit Card account that have remained unresolved for six years. The consumer wants reimbursement for the remaining fraudulent transactions.",
+      "priority": "MEDIUM",
+      "input_tokens": 6488,
+      "output_tokens": 606,
+      "seconds": 230.9,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.3,
+          "detail": "masked nothing; 1 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 152.0,
+          "detail": "credit_card at 84%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 22085.0,
+          "detail": "find_rules"
+        },
+        {
+          "step": "research",
+          "ms": 60085.1,
+          "detail": "company_history"
+        },
+        {
+          "step": "research",
+          "ms": 33191.5,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "4 passages, 2 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 113659.5,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.7,
+          "detail": "ticket 18 in Credit Cards"
+        }
+      ]
+    },
+    {
+      "id": "23201711",
+      "company": "CITIZENS FINANCIAL GROUP, INC.",
+      "issue": "Trouble during payment process",
+      "truth": "mortgage",
+      "text": "FORMAL NOTICE OF ERROR AND REQUEST FOR INFORMATION Date : [redacted]/2026 Borrower : Citizens Mortgage Loan Number : [redacted] Property Address : [redacted] [redacted] [redacted] [redacted], Texas To Whom It May Concern : Enclosed is my formal Notice of Error and Request for Information regarding the administration of my mortgage escrow account. This matter is not a new concern. I previously contacted Citizens [redacted] [redacted] in approximately [redacted]/2026 after discovering issues involving property tax payments and lease-related escrow charges that were misapplied and paid late for t",
+      "error": null,
+      "status": "filed",
+      "triage_product": "mortgage",
+      "triage_confidence": 0.9963,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Mortgage Servicing",
+      "expected_queue": "Mortgage Servicing",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-019\n\nWe acknowledge receipt of your formal notice of error and request for information regarding the administration of your mortgage escrow account. We are reviewing your complaint and will respond in accordance with applicable federal mortgage servicing regulations.\n\nPlease be advised that our response will include a clear and conspicuous statement describing a reasonable and simple method by which you can opt out of further electronic communications or attempts to communicate.\n\nSincerely,\n[Your Name]\n[Your Title]\nCITIZENS FINANCIAL GROUP, INC.\n\n",
+      "summary": "The consumer is requesting a complete escrow accounting and investigation due to misapplied property tax payments and lease-related escrow charges that were paid late for the second consecutive year. The consumer is requesting a written response and supporting documentation within the timeframes required by applicable federal mortgage servicing regulations.",
+      "priority": "MEDIUM",
+      "input_tokens": 5952,
+      "output_tokens": 517,
+      "seconds": 277.6,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.3,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 139.6,
+          "detail": "mortgage at 100%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 21543.1,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 114822.8,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 137642.5,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.7,
+          "detail": "ticket 19 in Mortgage Servicing"
+        }
+      ]
+    },
+    {
+      "id": "23228016",
+      "company": "West Capital Lending, Inc.",
+      "issue": "Applying for a mortgage or refinancing an existing mortgage",
+      "truth": "mortgage",
+      "text": "West Capital Lending received my information via a referral from an online loan processing aggregator. My information was used fraudulently as part of an identity theft attempt. I have made repeated attempts to request they delete my personal information and cease all further communications. The loan processor, [redacted] [redacted], acknowledged my request yet still continues to email and text message me nearly daily. I finally contacted [redacted] via email, with the West Capital Lending General Counsel on copy, requesting they cease all communications. I have yet to hear back regarding this",
+      "error": null,
+      "status": "filed",
+      "triage_product": "personal_loan",
+      "triage_confidence": 0.7038,
+      "triage_route": "person",
+      "triage_correct": false,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 1,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Consumer Lending",
+      "expected_queue": "Consumer Lending",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-020\n\nWe acknowledge receipt of your complaint regarding West Capital Lending, Inc.'s persistent contact attempts despite your requests to cease communication. We are reviewing this matter in accordance with 12 CFR 1006.6(a), which prohibits debt collectors from communicating with consumers in an inconvenient time or place.\n\nPlease note that you have the right to opt out of further electronic communications or attempts to communicate by providing a clear and conspicuous statement describing a reasonable and simple method by which you can opt out. You may also request that we stop contacting you by email or text message.\n\nWe will review your request and respond accordingly. Please allow [timeframe] for our response.\n\nSincerely,\n[Your Name] Consumer Complaint Reviewer\nWest Capital Lending, Inc.",
+      "summary": "The consumer claims that West Capital Lending, Inc. has not stopped contacting them despite their repeated requests to cease all further communications. The consumer wants this to stop.",
+      "priority": "MEDIUM",
+      "input_tokens": 4303,
+      "output_tokens": 550,
+      "seconds": 215.2,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 156.4,
+          "detail": "personal_loan at 70%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 12249.1,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 105466.3,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "4 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 94234.1,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.2,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 11.3,
+          "detail": "ticket 20 in Consumer Lending"
+        }
+      ]
+    },
+    {
+      "id": "23312866",
+      "company": "Rocket Mortgage, LLC",
+      "issue": "Trouble during payment process",
+      "truth": "mortgage",
+      "text": "In [redacted], Rocket Mortgage completed my annual escrow analysis and informed me I had a shortage of {$1100.00}, increasing my monthly mortgage payment from {$3500.00} to {$3700.00} effective [redacted]. After reviewing my Annual Escrow Account Disclosure Statement, I discovered a significant discrepancy. My actual escrow ending balance as of [redacted] was {$7900.00}. However, Rocket Mortgage 's new projection table starts [redacted] with a balance of only {$5400.00} a difference of {$2500.00} that has never been explained. This matters because their entire shortage calculation depends on t",
+      "error": null,
+      "status": "filed",
+      "triage_product": "mortgage",
+      "triage_confidence": 0.9894,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Mortgage Servicing",
+      "expected_queue": "Mortgage Servicing",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-021\n\nWe acknowledge receipt of your complaint regarding the escrow shortage calculation by Rocket Mortgage, LLC. We are reviewing your case in accordance with 12 CFR 1006.6(a) and will provide a response in accordance with 12 CFR 1006.6(d)(3)(i) and 12 CFR 1005.11(a)(1).\n\nPlease note that we will provide a provisional credit to your account in the amount of the alleged error, including interest where applicable, within 10 business days of receiving your error notice. If the financial institution has a reasonable basis for believing that an unauthorized electronic fund transfer has occurred and the institution has satisfied the requirements of 12 CFR 1005.6(a), the institution may withhold a maximum of $50 from the amount credited.\n\nWe will provide a complete explanation of the discrepancy and recalculate the escrow analysis using the correct starting balance. We will also refund any shortage payments already collected if no legitimate shortage exists and adjust your monthly payment accordingly.\n\nWe will provide a response to your complaint within 30 days of receiving your complaint. If you have any further questions or concerns, please do not hesitate to contact us.\n\nSincerely,\n[Your Name]",
+      "summary": "The consumer claims that Rocket Mortgage incorrectly calculated their escrow shortage, resulting in a significant increase in their monthly mortgage payment. The consumer requests a complete explanation of the discrepancy, recalculation of the escrow analysis, refund of any shortage payments, and adjustment of their monthly payment.",
+      "priority": "MEDIUM",
+      "input_tokens": 5864,
+      "output_tokens": 637,
+      "seconds": 308.4,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.4,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 286.0,
+          "detail": "mortgage at 99%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 20586.1,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 112536.2,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 171441.8,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.2,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 7.5,
+          "detail": "ticket 21 in Mortgage Servicing"
+        }
+      ]
+    },
+    {
+      "id": "23562189",
+      "company": "AMERICAN HONDA FINANCE CORP",
+      "issue": "Incorrect information on your report",
+      "truth": "vehicle_loan",
+      "text": "Requested to speak with credit reporting department, they would not allow me to. I have an active car loan in good standing but is not being reporting to the credit bureaus. It does not show on either 3 credit reports.",
+      "error": null,
+      "status": "filed",
+      "triage_product": "vehicle_loan",
+      "triage_confidence": 0.6348,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.15",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Auto Lending",
+      "expected_queue": "Auto Lending",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-022\n\nWe acknowledge receipt of your complaint regarding your car loan and credit reporting issues. Our review will be conducted in accordance with 12 CFR 1006.6(a), which requires us to communicate with consumers in a reasonable and convenient time and place. We will also review our procedures for resolving errors, as outlined in 12 CFR 1005.11(a)(1) and 12 CFR 1005.15(e)(3).\n\nSincerely,\n[Your Name]\nAMERICAN HONDA FINANCE CORP\n\nnext_steps",
+      "summary": "The consumer is requesting to speak with the credit reporting department, but was denied. The consumer has an active car loan in good standing but is not being reported to the credit bureaus, and does not show on either of their 3 credit reports.",
+      "priority": "MEDIUM",
+      "input_tokens": 4909,
+      "output_tokens": 535,
+      "seconds": 246.4,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 221.0,
+          "detail": "vehicle_loan at 63%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 9543.7,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 95563.1,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 137544.0,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.9,
+          "detail": "ticket 22 in Auto Lending"
+        }
+      ]
+    },
+    {
+      "id": "24417923",
+      "company": "CREDIT ACCEPTANCE CORPORATION",
+      "issue": "Repossession",
+      "truth": "vehicle_loan",
+      "text": "I am submitting this complaint because I believe Credit Acceptance Corporation is reporting inaccurate information regarding my auto loan to the consumer reporting agencies. The account is currently being reported as a closed account with a balance that I dispute. I requested that the company verify the accuracy of the information being furnished and provide documentation supporting the reporting. Specifically, I requested copies of the signed retail installment contract, the complete payment history, documentation supporting the reported repossession ( if applicable ), any legally required no",
+      "error": null,
+      "status": "filed",
+      "triage_product": "vehicle_loan",
+      "triage_confidence": 0.9458,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.15",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Auto Lending",
+      "expected_queue": "Auto Lending",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-023\n\nWe acknowledge receipt of your complaint regarding Credit Acceptance Corporation's reporting of inaccurate information regarding your auto loan to the consumer reporting agencies. We are reviewing your complaint in accordance with 12 CFR 1006.6(a) and will investigate the matter.\n\nPlease note that you have the right to request a written explanation of our investigation and notification of any corrections or deletions required under 12 CFR 1006.6(e).\n\nSincerely,\n[Your Name]\nConsumer Complaints Department\nCredit Acceptance Corporation",
+      "summary": "The consumer believes Credit Acceptance Corporation is reporting inaccurate information regarding their auto loan to the consumer reporting agencies. The consumer is requesting that Credit Acceptance conduct a thorough investigation and provide documentation verifying the accuracy of the account and all information being reported.",
+      "priority": "MEDIUM",
+      "input_tokens": 5512,
+      "output_tokens": 527,
+      "seconds": 261.6,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 156.8,
+          "detail": "vehicle_loan at 95%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 15648.5,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 106598.5,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 135772.2,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 10.9,
+          "detail": "ticket 23 in Auto Lending"
+        }
+      ]
+    },
+    {
+      "id": "23834119",
+      "company": "ALLY FINANCIAL INC.",
+      "issue": "Problems at the end of the loan or lease",
+      "truth": "vehicle_loan",
+      "text": "I leased a [redacted] through Ally Bank. I made my payment every month for 36 months. I returned the vehicle with low miles in perfect condition. They charged me a surprise hidden fee of [redacted] $ for a \" return car fee, lease end fee ''. After giving them [redacted] over 3 years I was very upset. I called up and we agreed to [redacted] $ i sent them the [redacted] $ check and I then months later seen they reported to my credit report [redacted] $ late. I called them and they said since they didnt get the check right away they canceled our agreement. They cashed my check, took the agreement",
+      "error": null,
+      "status": "filed",
+      "triage_product": "vehicle_loan",
+      "triage_confidence": 0.8917,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": false,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 1,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Auto Lending",
+      "expected_queue": "Auto Lending",
+      "letter": "Dear Consumer,\n\nCase Number: EV-024\n\nWe acknowledge receipt of your complaint regarding the surprise hidden fee charged by Ally Financial Inc. after returning your leased vehicle in perfect condition. We are reviewing your case in accordance with 12 CFR 1006.6(a), which requires that debt collectors communicate with consumers in a reasonable and non-abusive manner.\n\nPlease be advised that you have the right to opt-out of further electronic communications or attempts to communicate from Ally Financial Inc. regarding this matter. If you wish to opt-out, please reply to this letter with the words \"OPT-OUT\" in the subject line of your email.\n\nSincerely,\n[Your Name]\nConsumer Complaints Department\nAlly Financial Inc.\n\nnext_steps\": [",
+      "summary": "The consumer leased a vehicle through Ally Financial Inc. and was charged a surprise hidden fee after returning the vehicle in perfect condition. The consumer claims that Ally Financial Inc. failed to remove the late charge from their credit report, which has resulted in denied business loans and increased insurance rates.",
+      "priority": "MEDIUM",
+      "input_tokens": 7695,
+      "output_tokens": 1234,
+      "seconds": 368.8,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 181.0,
+          "detail": "vehicle_loan at 89%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 13249.9,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 107501.1,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 190112.6,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.0,
+          "detail": "The draft cites no rule.; The letter must include the case number EV-024."
+        },
+        {
+          "step": "draft",
+          "ms": 54401.3,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 8.0,
+          "detail": "ticket 24 in Auto Lending"
+        }
+      ]
+    },
+    {
+      "id": "23882938",
+      "company": "MOHELA",
+      "issue": "Struggling to repay your loan",
+      "truth": "student_loan",
+      "text": "I am submitting this complaint to request assistance regarding the federal student loan debt I incurred while attending [redacted] University. I believe I suffered significant financial harm as a result of deceptive and misleading representations made by the institution regarding the quality, value, and outcomes of its educational programs. At the time of my enrollment, [redacted] University marketed its programs as providing a quality education that would prepare students for meaningful employment and improved career opportunities. I relied on these representations when making the significant",
+      "error": null,
+      "status": "filed",
+      "triage_product": "student_loan",
+      "triage_confidence": 0.9934,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1026.48",
+        "1026.57"
+      ],
+      "rule_family_match": true,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 1,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Student Lending",
+      "expected_queue": "Student Lending",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-025\n\nWe acknowledge receipt of your complaint regarding your federal student loan debt incurred while attending [redacted] University. Our review will be conducted in accordance with 12 CFR 1026.48(a) and 12 CFR 1026.57(a)(1), which govern the marketing and reporting of private education loans and college student open-end credit.\n\nPlease note that our review will be conducted in a timely manner, and we will provide you with an update on the status of your case.\n\nSincerely,\n[Your Name] MOHELA",
+      "summary": "The consumer is requesting assistance with their federal student loan debt incurred while attending a university that was found to have engaged in deceptive practices. They believe they were misled about the quality and value of the educational programs and are seeking relief under a settlement related to such institutions.",
+      "priority": "MEDIUM",
+      "input_tokens": 5071,
+      "output_tokens": 431,
+      "seconds": 234.7,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.5,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 193.8,
+          "detail": "student_loan at 99%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 19563.6,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 113761.3,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "4 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 97683.3,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 7.8,
+          "detail": "ticket 25 in Student Lending"
+        }
+      ]
+    },
+    {
+      "id": "23317682",
+      "company": "MOHELA",
+      "issue": "Problem with a company's investigation into an existing problem",
+      "truth": "student_loan",
+      "text": "I consolidated my federal student loans in approximately [redacted] [redacted]. Since consolidation, I have continued making payments on the loan and have records showing payments made throughout late [redacted] and [redacted]. Despite this, my credit report is currently reporting the account as 90, 120, 150, and 180 days delinquent between [redacted] and [redacted]. The credit report also reflects a past-due balance of approximately {$2200.00}. I have disputed this information with the credit bureaus on [redacted] separate occasions. Each dispute has resulted in the information being verified",
+      "error": null,
+      "status": "filed",
+      "triage_product": "student_loan",
+      "triage_confidence": 0.7612,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.15",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 1,
+      "ticket_queue": "Student Lending",
+      "expected_queue": "Student Lending",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-026\n\nWe acknowledge receipt of your complaint regarding your federal student loan debt. Our review will be conducted in accordance with 12 CFR 1006.6(a), which requires us to communicate with you in a reasonable and convenient time and place. We will also consider your request for a full investigation into the accuracy of the information being furnished to the credit bureaus, as outlined in 12 CFR 1006.6(e) and 12 CFR 1005.11(a)(1).\n\nPlease note that we will provisionally credit your account in the amount of the alleged error, as required by 12 CFR 1005.11(c)(2)(i), within 10 business days of receiving your error notice. If the alleged error involves an account that is subject to Regulation T, we may not provisionally credit your account.\n\nWe will also consider your request for correction of any inaccurate information being reported, as outlined in 12 CFR 1005.15(e)(3).\n\nWe will notify you of the outcome of our investigation and any necessary corrections to your account, in accordance with 12 CFR 1005.33(f)(1).\n\nSincerely,\n[Your Name]\nMOHELA",
+      "summary": "The consumer is requesting assistance with their federal student loan debt, claiming that their credit report is inaccurately reporting delinquency history and past-due balance. They are seeking a full investigation into the accuracy of the information being furnished to the credit bureaus.",
+      "priority": "MEDIUM",
+      "input_tokens": 5726,
+      "output_tokens": 761,
+      "seconds": 332.9,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.4,
+          "detail": "masked nothing; 1 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 241.9,
+          "detail": "student_loan at 76%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 17701.2,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 126732.9,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 184770.0,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 8.0,
+          "detail": "ticket 26 in Student Lending"
+        }
+      ]
+    },
+    {
+      "id": "23912769",
+      "company": "MOHELA",
+      "issue": "Dealing with your lender or servicer",
+      "truth": "student_loan",
+      "text": "URGENT : I spoke with MOHELA [redacted] [redacted] ( badge # [redacted] ) on [redacted]/year> at approximately [redacted] [redacted]. I informed her that I have [redacted] qualifying payments and that my correct monthly payment should be capped at {$410.00}. She refused to honor the {$410.00} cap, told me it no longer applied, and attempted to charge me an illegal {$660.00} per month. When I asked her to correct the payment amount and perform an audit, she refused. Because I could not afford the illegal {$660.00} payment, I was forced to switch to the Graduated Repayment Plan at {$300.00} just",
+      "error": null,
+      "status": "filed",
+      "triage_product": "student_loan",
+      "triage_confidence": 0.882,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1006.14",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 2,
+        "find_rules_calls": 1,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 2,
+      "ticket_queue": "Student Lending",
+      "expected_queue": "Student Lending",
+      "letter": "Dear [Consumer's Name], Re: EV-027, MOHELA Student Loan Complaint. We acknowledge receipt of your complaint and are reviewing it in accordance with 12 CFR 1006.14(e), which prohibits harassing, oppressive, or abusive conduct. We will ensure that our representative's communication with you complies with 12 CFR 1006.6(b)(2)(ii), which requires meaningful disclosure of identity. We will review your case and provide a written response as required by law. Please allow [insert timeframe] for our review. Sincerely, [Your Name] MOHELA Consumer Response Team",
+      "summary": "The consumer claims that MOHELA's representative refused to honor a payment cap and instead charged an illegal amount, forcing the consumer to switch to a different repayment plan. The consumer seeks assistance to correct the payment amount and ensure that MOHELA complies with the payment cap.",
+      "priority": "MEDIUM",
+      "input_tokens": 4096,
+      "output_tokens": 488,
+      "seconds": 192.8,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.2,
+          "detail": "masked nothing; 2 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 201.8,
+          "detail": "student_loan at 88%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 18786.3,
+          "detail": "find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 77434.7,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "4 passages, 2 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 94432.2,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 6.3,
+          "detail": "ticket 27 in Student Lending"
+        }
+      ]
+    },
+    {
+      "id": "23680541",
+      "company": "Affirm Holdings, Inc",
+      "issue": "Charged fees or interest you didn't expect",
+      "truth": "personal_loan",
+      "text": "This is an escalating Buy Now, Pay Later billing loan dispute against Affirm , Inc. Affirm is enforcing a loan in the amount of {$1500.00} for a medical product that was changed by the merchant without my prior verification. The fulfilling pharmacy, [redacted] [redacted] ( License # [redacted], working for [redacted] ), shipped a premixed [redacted] vial. I missed the pre-ship email and only discovered the change when the vial physically arrived and was different. This combination carries documented clinical risks. The drug manufacturer, [redacted] [redacted], issued formal laboratory warnings",
+      "error": null,
+      "status": "filed",
+      "triage_product": "personal_loan",
+      "triage_confidence": 0.9332,
+      "triage_route": "automatic",
+      "triage_correct": true,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": false,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 1,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Consumer Lending",
+      "expected_queue": "Consumer Lending",
+      "letter": "Dear Consumer,\n\nCase Number: EV-028\n\nWe acknowledge receipt of your complaint and are reviewing it. Please note that, as stated in 12 CFR 1006.6(a), a debt collector must not communicate with a consumer in connection with the collection of any debt at any unusual time or at a time that the debt collector knows or should know is inconvenient to the consumer.\n\nSincerely,\n[Your Name]\n[Your Title]",
+      "summary": "The consumer is disputing a $1500 loan from Affirm, Inc. for a medical product that was changed by the merchant without prior verification. The consumer wants Affirm to freeze billing during an active regulatory review.",
+      "priority": "MEDIUM",
+      "input_tokens": 8377,
+      "output_tokens": 1138,
+      "seconds": 359.9,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.3,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 128.6,
+          "detail": "personal_loan at 93%, route automatic"
+        },
+        {
+          "step": "research",
+          "ms": 19056.2,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 112666.6,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 184238.8,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.0,
+          "detail": "The draft cites no rule.; The letter must include the case number EV-028."
+        },
+        {
+          "step": "draft",
+          "ms": 40033.4,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 7.3,
+          "detail": "ticket 28 in Consumer Lending"
+        }
+      ]
+    },
+    {
+      "id": "23313055",
+      "company": "CCF Intermediate Holdings LLC",
+      "issue": "Problem with the payoff process at the end of the loan",
+      "truth": "personal_loan",
+      "text": "Dear Consumer Financial Protection Bureau, I respectfully submit this rebuttal to TitleMax of Nevada, Inc.s latest response. I do not consider this matter resolved and respectfully request that the CFPB continue its review and investigation. After reviewing TitleMaxs latest response and the supporting documentation they have chosen to produce, my concerns have not been resolved. Instead, the records produced by TitleMax raise additional questions regarding notice, account access, payoff information, servicing practices, repossession procedures, and the completeness of their disclosures. At thi",
+      "error": null,
+      "status": "filed",
+      "triage_product": "vehicle_loan",
+      "triage_confidence": 0.3312,
+      "triage_route": "person",
+      "triage_correct": false,
+      "cited": [
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Auto Lending",
+      "expected_queue": "Auto Lending",
+      "letter": "Dear [Consumer's Name], Re: EV-029\n\nWe acknowledge receipt of your complaint regarding your experience with CCF Intermediate Holdings LLC. We are reviewing your complaint and will investigate the matter in accordance with the requirements of 12 CFR 1006.6(a).\n\nPlease be advised that you have the right to opt-out of further electronic communications or attempts to communicate from us. If you wish to opt-out, please reply to this email with the words 'OPT-OUT' in the subject line. We will not require you to pay any fee to opt-out.\n\nSincerely,\n[Your Name]\nConsumer Financial Protection Bureau\n\n",
+      "summary": "The consumer claims that they were not provided with adequate notice and access to their account information, leading to difficulties in managing their loan. They request that the CFPB investigate and resolve the issue.",
+      "priority": "MEDIUM",
+      "input_tokens": 5873,
+      "output_tokens": 476,
+      "seconds": 269.2,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.4,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 115.5,
+          "detail": "vehicle_loan at 33%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 18705.7,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 109527.1,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 137248.3,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 7.1,
+          "detail": "ticket 29 in Auto Lending"
+        }
+      ]
+    },
+    {
+      "id": "23576886",
+      "company": "Allegiant Capital Recovery LLC",
+      "issue": "Charged fees or interest you didn't expect",
+      "truth": "personal_loan",
+      "text": "I had a loan with the lender credit fresh. I was current on my payments then fell behind. They then sold my account to a third party, allegiant capital recovery. I paid them [redacted] and was told [redacted] was left on my [redacted] amount due to settle. I then got an email saying that I had to pay a different amount. So I ended up not paying it. I still owe [redacted] but have paid a lot on it after all of the interest I didnt know they charged.",
+      "error": null,
+      "status": "filed",
+      "triage_product": "personal_loan",
+      "triage_confidence": 0.7789,
+      "triage_route": "person",
+      "triage_correct": true,
+      "cited": [
+        "1005.11",
+        "1005.33",
+        "1006.6"
+      ],
+      "rule_family_match": false,
+      "first_draft_passed": true,
+      "final_passed": true,
+      "invented_final": [],
+      "problems_final": [],
+      "repairs": 0,
+      "tool_use": {
+        "calls": 3,
+        "find_rules_calls": 2,
+        "company_history_calls": 1,
+        "repeated_calls": 0,
+        "model_found_rules": true,
+        "fallback_search": false
+      },
+      "notes_seen": 0,
+      "ticket_queue": "Consumer Lending",
+      "expected_queue": "Consumer Lending",
+      "letter": "Dear [Consumer's Name],\n\nCase Number: EV-030\n\nWe acknowledge receipt of your complaint against Allegiant Capital Recovery LLC regarding the collection of a debt. We are reviewing your complaint in accordance with 12 CFR 1006.6(a) and will take necessary steps to ensure compliance with the regulations.\n\nPlease note that Allegiant Capital Recovery LLC must not communicate with you in connection with the collection of the debt at any unusual time or at a time that is inconvenient to you, as per 12 CFR 1006.6(b).\n\nWe will provide an update on the status of your complaint once we have completed our review.\n\nSincerely,\n[Your Name]",
+      "summary": "The consumer claims that Allegiant Capital Recovery LLC sold their account to a third party after falling behind on payments, and then sent multiple emails with conflicting demands for payment. The consumer wants Allegiant Capital Recovery LLC to stop contacting them about the debt.",
+      "priority": "MEDIUM",
+      "input_tokens": 4996,
+      "output_tokens": 602,
+      "seconds": 255.0,
+      "trace": [
+        {
+          "step": "intake",
+          "ms": 0.1,
+          "detail": "masked nothing; 0 earlier notes"
+        },
+        {
+          "step": "triage",
+          "ms": 125.4,
+          "detail": "personal_loan at 78%, route person"
+        },
+        {
+          "step": "research",
+          "ms": 10503.1,
+          "detail": "find_rules, find_rules, company_history"
+        },
+        {
+          "step": "research",
+          "ms": 97772.1,
+          "detail": "no tool call"
+        },
+        {
+          "step": "collect",
+          "ms": 0.1,
+          "detail": "8 passages, 3 tool calls"
+        },
+        {
+          "step": "draft",
+          "ms": 143178.5,
+          "detail": "MEDIUM priority"
+        },
+        {
+          "step": "check",
+          "ms": 0.1,
+          "detail": "passed"
+        },
+        {
+          "step": "review",
+          "ms": 0.0,
+          "detail": "approved by evaluation run"
+        },
+        {
+          "step": "file",
+          "ms": 10.8,
+          "detail": "ticket 30 in Consumer Lending"
+        }
+      ]
+    }
+  ]
+}
